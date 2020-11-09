@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>{% block title %}Bienvenue {% endblock %}</title>
+
+        <link rel="icon" href="../public/images/favicon.png">
+        <!-- Latest compiled and minified CSS -->
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>
+        <link rel='stylesheet' href="{{asset('css/main.css')}}">
+
+        <!--Font awesome-->
+        <script src="https://kit.fontawesome.com/4afbbf917f.js" crossorigin="anonymous"></script>
+
+        {% block stylesheets %}{% endblock %}
+
+    </head>
+    <body class='container-fluid'>
+ 
