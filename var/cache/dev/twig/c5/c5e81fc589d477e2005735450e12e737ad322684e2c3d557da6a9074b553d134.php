@@ -1704,6 +1704,6 @@ class __TwigTemplate_a89647ae7704f353278fc342453380f1fa3365b531aed1027cb75d2f9e1
     });
 
 /*]]>*/</script>
-", "@WebProfiler/Profiler/base_js.html.twig", "C:\\wamp64\\www\\test\\cosplayProject\\my_project_name\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base_js.html.twig");
+", "@WebProfiler/Profiler/base_js.html.twig", "C:\\wamp64\\www\\test\\cosplayProject\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\base_js.html.twig");
     }
 }

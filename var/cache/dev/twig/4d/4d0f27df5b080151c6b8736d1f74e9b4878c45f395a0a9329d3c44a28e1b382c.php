@@ -1289,6 +1289,6 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 353), twig_c
         </table>
     {% endif %}
 {% endblock %}
-", "@Security/Collector/security.html.twig", "C:\\wamp64\\www\\test\\cosplayProject\\my_project_name\\vendor\\symfony\\security-bundle\\Resources\\views\\Collector\\security.html.twig");
+", "@Security/Collector/security.html.twig", "C:\\wamp64\\www\\test\\cosplayProject\\vendor\\symfony\\security-bundle\\Resources\\views\\Collector\\security.html.twig");
     }
 }
