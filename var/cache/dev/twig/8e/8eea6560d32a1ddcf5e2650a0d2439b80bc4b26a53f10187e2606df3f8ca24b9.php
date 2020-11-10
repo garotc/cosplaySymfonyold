@@ -27,7 +27,6 @@ class __TwigTemplate_073964a37dfbc4eabfa3f0516610560878687b60d8c1b99d7070fb787c2
         $this->parent = false;
 
         $this->blocks = [
-            'titreEnValeur' => [$this, 'block_titreEnValeur'],
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
         ];
@@ -48,29 +47,21 @@ class __TwigTemplate_073964a37dfbc4eabfa3f0516610560878687b60d8c1b99d7070fb787c2
         // line 2
         echo twig_include($this->env, $context, "layouts/partials/_header.html.twig");
         echo "
-";
-        // line 3
-        echo twig_include($this->env, $context, "layouts/partials/_nav.html.twig");
-        echo "
 
-  <h1 class='bg-info text-white p-4 text-center'>";
-        // line 5
-        $this->displayBlock('titreEnValeur', $context, $blocks);
-        echo "</h1>
           ";
-        // line 6
+        // line 4
         $this->displayBlock('body', $context, $blocks);
-        // line 7
+        // line 5
         echo "          
 ";
-        // line 8
+        // line 6
         echo twig_include($this->env, $context, "layouts/partials/_footer.html.twig");
         echo "
 
         ";
-        // line 10
+        // line 8
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 11
+        // line 9
         echo "    </body>
 </html>
 ";
@@ -82,25 +73,7 @@ class __TwigTemplate_073964a37dfbc4eabfa3f0516610560878687b60d8c1b99d7070fb787c2
 
     }
 
-    // line 5
-    public function block_titreEnValeur($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "titreEnValeur"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "titreEnValeur"));
-
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 6
+    // line 4
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -118,7 +91,7 @@ class __TwigTemplate_073964a37dfbc4eabfa3f0516610560878687b60d8c1b99d7070fb787c2
 
     }
 
-    // line 10
+    // line 8
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -148,16 +121,14 @@ class __TwigTemplate_073964a37dfbc4eabfa3f0516610560878687b60d8c1b99d7070fb787c2
 
     public function getDebugInfo()
     {
-        return array (  122 => 10,  104 => 6,  86 => 5,  74 => 11,  72 => 10,  67 => 8,  64 => 7,  62 => 6,  58 => 5,  53 => 3,  49 => 2,  46 => 1,);
+        return array (  95 => 8,  77 => 4,  65 => 9,  63 => 8,  58 => 6,  55 => 5,  53 => 4,  48 => 2,  45 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("     
 {{ include('layouts/partials/_header.html.twig') }}
-{{ include('layouts/partials/_nav.html.twig') }}
 
-  <h1 class='bg-info text-white p-4 text-center'>{% block titreEnValeur %}{% endblock %}</h1>
           {% block body %}{% endblock %}
           
 {{ include('layouts/partials/_footer.html.twig') }}

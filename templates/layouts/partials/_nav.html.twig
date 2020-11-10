@@ -6,22 +6,25 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+
         <li class="nav-item active">
-            <a class="nav-link" href="{{path("accueil")}}">Accueil <span class="sr-only">(current)</span></a>
+                <a class="navbar-brand" href="https://www.carologameshow.com/">
+    <img src='{{ asset('img/logo-cgs.webp') }}' alt='logo carolo game show' class='logo-cgs-nav'>
+    </a>
         </li>
 
 {% if not app.user %}
-        <li class="nav-item">
+        <li class="nav-item ml-auto">
             <a class="nav-link" href="{{path("register")}}">Inscription</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{path("accueil")}}"><i class="far fa-user mr-1"></i>Connexion</a>
+            <a class="nav-link" href="{{path("app_login")}}"><i class="far fa-user mr-1"></i>Connexion</a>
         </li>
 
 {% else %}
         <li class="nav-item">
-            <a class="nav-link" href="{{path('accueil')}}">Déconnexion</a>
+            <a class="nav-link" href="{{path('app_logout')}}">Déconnexion</a>
         </li>
 {% endif %}
 
