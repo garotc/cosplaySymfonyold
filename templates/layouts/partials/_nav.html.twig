@@ -24,19 +24,14 @@
 
 {% else %}
         <li class="nav-item">
+            <a class="nav-link" href="{{path('accueil')}}">Inscription</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{path('_app_user_account')}}">Mon compte</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{path('app_logout')}}">Déconnexion</a>
         </li>
-{% endif %}
-
-{% if is_granted('ROLE_ADMIN') %}
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Administration
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{path('accueil')}}">Gestion des categories</a>
-          <a class="dropdown-item" href="{{path('accueil')}}">Gestion des articles</a>
-      </li>
 {% endif %}
     </ul>
 
