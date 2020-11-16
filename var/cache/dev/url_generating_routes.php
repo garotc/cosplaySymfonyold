@@ -17,7 +17,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'admin_admin' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::index'], [], [['text', '/admin/admin']], [], []],
     'admin_aff_user' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminController::affUser'], [], [['text', '/admin/users']], [], []],
-    'admin_user_edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminController::modifUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/user']], [], []],
+    'admin_user_edit' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminController::editUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/user']], [], []],
     'admin_user_delete' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminController::deleteUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/user']], [], []],
     'accueil' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'rgpd' => [[], ['_controller' => 'App\\Controller\\HomeController::rgpd'], [], [['text', '/rgpd']], [], []],
@@ -29,4 +29,5 @@ return [
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     '_app_user_account' => [[], ['_controller' => 'App\\Controller\\User\\UserController::getInfosUser'], [], [['text', '/profile/mon-compte']], [], []],
+    'user_edit' => [[], ['_controller' => 'App\\Controller\\User\\UserController::editUser'], [], [['text', '/profile/modifier-compte']], [], []],
 ];
