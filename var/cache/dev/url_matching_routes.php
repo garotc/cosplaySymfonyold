@@ -24,6 +24,7 @@ return [
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/profile/mon-compte' => [[['_route' => '_app_user_account', '_controller' => 'App\\Controller\\User\\UserController::getInfosUser'], null, null, null, false, false, null]],
+        '/profile/modifier-compte' => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\User\\UserController::editUser'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -57,7 +58,7 @@ return [
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         192 => [
-            [['_route' => 'admin_user_edit', '_controller' => 'App\\Controller\\Admin\\AdminController::modifUser'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null],
+            [['_route' => 'admin_user_edit', '_controller' => 'App\\Controller\\Admin\\AdminController::editUser'], ['id'], null, null, false, true, null],
             [['_route' => 'admin_user_delete', '_controller' => 'App\\Controller\\Admin\\AdminController::deleteUser'], ['id'], ['SUP' => 0], null, false, true, null],
         ],
         237 => [
