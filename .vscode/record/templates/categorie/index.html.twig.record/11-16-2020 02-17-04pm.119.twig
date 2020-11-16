@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categorie index{% endblock %}
+
+{% block body %}
+    <h1>Categorie index</h1>
+<div class="container-fluid">
+        {% for categorie in categories %}
+            <div class="row">
+                {{ categorie.libelleCategorie }}
+            </div>
+            <div class="row">
+                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">edit</a>
+                </td>
+            </div>
+        {% else %}
+            <div class="row">
+                <p>Il n'y a pas encore de catégories</p>
+            </div>
+        {% endfor %}
+</div>
+    <a href="{{ path('categorie_new') }}">Create new</a>
+{% endblock %}

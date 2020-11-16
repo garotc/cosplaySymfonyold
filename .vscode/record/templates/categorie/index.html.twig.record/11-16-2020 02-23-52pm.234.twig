@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categorie index{% endblock %}
+
+{% block body %}
+    <div class="col-10 m-auto form-categorie">
+            {% for categorie in categories %}
+                <div class="row">
+                    <p class='col-4'>{{ categorie.libelleCategorie }}</p>
+                
+                        <a href="{{ path('categorie_edit', {'id': categorie.id}) }}">Modifier</a>
+                    </td>
+                </div>
+            {% else %}
+                <div class="row">
+                    <p>Il n'y a pas encore de catégories</p>
+                </div>
+            {% endfor %}
+
+        <div class="row">
+            <a href="{{ path('categorie_new') }}">Ajouter</a>
+        </div>
+    </div>
+{% endblock %}
