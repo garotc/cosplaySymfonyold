@@ -14,7 +14,10 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin/admin' => [[['_route' => 'admin_admin', '_controller' => 'App\\Controller\\Admin\\AdminController::index'], null, null, null, false, false, null]],
+        '/admin/categorie/ajout' => [[['_route' => 'categorie_ajout', '_controller' => 'App\\Controller\\Admin\\AdminController::ajouterCategorie'], null, null, null, false, false, null]],
         '/admin/users' => [[['_route' => 'admin_aff_user', '_controller' => 'App\\Controller\\Admin\\AdminController::affUser'], null, null, null, false, false, null]],
+        '/admin/categorie/admin/categorie' => [[['_route' => 'categorie_index', '_controller' => 'App\\Controller\\CategorieController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/admin/categorieadmin/ajouter-categorie' => [[['_route' => 'categorie_new', '_controller' => 'App\\Controller\\CategorieController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/rgpd' => [[['_route' => 'rgpd', '_controller' => 'App\\Controller\\HomeController::rgpd'], null, null, null, false, false, null]],
         '/creer-compte' => [[['_route' => 'register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
@@ -43,10 +46,17 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/admin/user/([^/]++)(?'
-                    .'|(*:192)'
+                .'|/admin/(?'
+                    .'|user/([^/]++)(?'
+                        .'|(*:195)'
+                    .')'
+                    .'|categorieadmin/categorie/([^/]++)(?'
+                        .'|(*:240)'
+                        .'|/edit(*:253)'
+                        .'|(*:261)'
+                    .')'
                 .')'
-                .'|/reset\\-password/reset(?:/([^/]++))?(*:237)'
+                .'|/reset\\-password/reset(?:/([^/]++))?(*:307)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -57,11 +67,14 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        192 => [
+        195 => [
             [['_route' => 'admin_user_edit', '_controller' => 'App\\Controller\\Admin\\AdminController::editUser'], ['id'], null, null, false, true, null],
             [['_route' => 'admin_user_delete', '_controller' => 'App\\Controller\\Admin\\AdminController::deleteUser'], ['id'], ['SUP' => 0], null, false, true, null],
         ],
-        237 => [
+        240 => [[['_route' => 'categorie_show', '_controller' => 'App\\Controller\\CategorieController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        253 => [[['_route' => 'categorie_edit', '_controller' => 'App\\Controller\\CategorieController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        261 => [[['_route' => 'categorie_delete', '_controller' => 'App\\Controller\\CategorieController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        307 => [
             [['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
