@@ -6,7 +6,7 @@ use App\Entity\Categorie;
 use App\Entity\InscriptionSolo;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\ChoiceList\ChoiceList;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -27,14 +27,22 @@ class InscriptionSoloFormType extends AbstractType
                     'Video' => false,
                 ],
             ])
-            ->add('envoiMediaSolo')
+            ->add('envoiMediaSolo', ChoiceType::class,[
+                'choices'=>[
+                    'Avant mon entrée'=> true,
+                    'Après mon entrée'=>false
+                ]
+            ])
             ->add('aideSolo')
             ->add('accessoireSolo')
             ->add('descriptionAccessoireSolo', TextareaType::class)
             ->add('infosSolo', TextareaType::class)
             //->add('user')
-            ->add('categorie', ChoiceType::class,[ 'choice_name' => ChoiceList::fieldName($this, 'libelleCategorie')
-            //'expanded'=>true
+            ->add('categorie',EntityType::class,[
+                'class'=>Categorie::class,
+            'choice_label'=>'libelleCategorie',
+            'multiple'=>false, //choisir plusieurs catégories
+            'expanded'=>false
             ])
             ->add('Enregistrer', SubmitType::class)
         ;
