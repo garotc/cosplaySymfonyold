@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Insciption solo{% endblock %}
+
+{% block body %}
+<h1>Inscriptions au concours solo</h1>
+
+<section class='row p-auto'>
+{% for inscription in inscriptionsSolo %}
+
+    <div class="col-sm-12 col-md-3 affUser m-1 p-2">
+        <div class="row py-1">
+            <div class="col-sm-12 col-md-12">Pseudo : {{ inscription.user.pseudo }}</div>
+        </div>
+        <div class="row py-1">
+            <div class="col-sm-12 col-md-12">Email : {{ inscription.user.email }}</div>
+        </div>
+        <div class="row py-1">
+            <div class="col-sm-12 col-md-6">Nom : {{ inscription.user.nom }}</div>
+            <div class="col-sm-12 col-md-6">Prénom : {{ inscription.user.prenom }}</div>
+        </div>
+        <div class="row py-1">
+            <div class="col-sm-12 col-md-12">Téléphone : {{ inscription.user.telephone }}</div>
+        </div>
+        <div class="row py-1">
+            <div class="col-sm-12 col-md-12">Inscription effectuée le {{ inscription.createdAt | date('d M Y',"Europe/Paris")}}</div>
+        </div>
+        <hr></hr>
+        <div class="row py-1">
+            <div class="col-sm-12 col-md-12">Nom du personnage : {{ inscription.NomPersoSolo }}</div>
+        </div>
+        <div class="row py-1">
+            <div class="col-sm-12 col-md-12">Email : {{ inscription.user.email }}</div>
+        </div>
+    </div>
+
+{% endfor %}
+</section>
+
+{% endblock %}
