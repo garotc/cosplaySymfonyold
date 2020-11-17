@@ -407,10 +407,17 @@
     <service id="App\Form\EditAccountUserFormType" class="App\Form\EditAccountUserFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\InscriptionSoloFormType" class="App\Form\InscriptionSoloFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\CategorieRepository" class="App\Repository\CategorieRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\InscriptionSoloRepository" class="App\Repository\InscriptionSoloRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -879,6 +886,7 @@
         <argument>App\Form\CategorieType</argument>
         <argument>App\Form\ChangePasswordFormType</argument>
         <argument>App\Form\EditAccountUserFormType</argument>
+        <argument>App\Form\InscriptionSoloFormType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -1221,7 +1229,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.btL4d7R"/>
+      <argument type="service" id=".service_locator.34Fern_"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -3411,7 +3419,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.96gMxnF"/>
+      <argument type="service" id=".service_locator.7GdNi7E"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5168,10 +5176,14 @@
     <service id=".abstract.instanceof.App\Form\ChangePasswordFormType" class="App\Form\ChangePasswordFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EditAccountUserFormType" class="App\Form\EditAccountUserFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\EditAccountUserFormType" class="App\Form\EditAccountUserFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\InscriptionSoloFormType" class="App\Form\InscriptionSoloFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\InscriptionSoloFormType" class="App\Form\InscriptionSoloFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategorieRepository" class="App\Repository\CategorieRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategorieRepository" class="App\Repository\CategorieRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\InscriptionSoloRepository" class="App\Repository\InscriptionSoloRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\InscriptionSoloRepository" class="App\Repository\InscriptionSoloRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
@@ -5492,7 +5504,13 @@
         <argument key="repo" type="service" id="App\Repository\UserRepository"/>
       </argument>
     </service>
-    <service id=".service_locator..Bo78yV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.ffgJy8f" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="em" type="service" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.DD_xQqc" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\AdminController::affUser" type="service" id=".service_locator.RTUGCCW"/>
@@ -5510,6 +5528,7 @@
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.xA8Fw_."/>
         <argument key="App\Controller\User\UserController::editUser" type="service" id=".service_locator.dNCO0Nf"/>
         <argument key="App\Controller\User\UserController::getInfosUser" type="service" id=".service_locator.fw6ySEy"/>
+        <argument key="App\Controller\User\UserController::inscriptionSolo" type="service" id=".service_locator.ffgJy8f"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="App\Kernel::terminate" type="service" id=".service_locator.beq5mCo"/>
@@ -5531,6 +5550,7 @@
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.xA8Fw_."/>
         <argument key="App\Controller\User\UserController:editUser" type="service" id=".service_locator.dNCO0Nf"/>
         <argument key="App\Controller\User\UserController:getInfosUser" type="service" id=".service_locator.fw6ySEy"/>
+        <argument key="App\Controller\User\UserController:inscriptionSolo" type="service" id=".service_locator.ffgJy8f"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.C9JCBPC"/>
         <argument key="kernel:terminate" type="service" id=".service_locator.beq5mCo"/>
@@ -5595,12 +5615,13 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.btL4d7R" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.34Fern_" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CategorieType" type="service" id="App\Form\CategorieType"/>
         <argument key="App\Form\ChangePasswordFormType" type="service" id="App\Form\ChangePasswordFormType"/>
         <argument key="App\Form\EditAccountUserFormType" type="service" id="App\Form\EditAccountUserFormType"/>
+        <argument key="App\Form\InscriptionSoloFormType" type="service" id="App\Form\InscriptionSoloFormType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
@@ -5620,10 +5641,11 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.96gMxnF" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.7GdNi7E" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategorieRepository" type="service" id="App\Repository\CategorieRepository"/>
+        <argument key="App\Repository\InscriptionSoloRepository" type="service" id="App\Repository\InscriptionSoloRepository"/>
         <argument key="App\Repository\ResetPasswordRequestRepository" type="service" id="App\Repository\ResetPasswordRequestRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
@@ -6031,12 +6053,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator..Bo78yV"/>
+      <argument type="service" id=".service_locator.DD_xQqc"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator..Bo78yV"/>
+      <argument type="service" id=".service_locator.DD_xQqc"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6441,7 +6463,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.WaGDpDt" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator..Bo78yV"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.DD_xQqc"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

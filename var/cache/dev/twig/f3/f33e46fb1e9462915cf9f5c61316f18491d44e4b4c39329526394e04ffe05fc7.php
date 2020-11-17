@@ -57,11 +57,16 @@ class __TwigTemplate_f15c347eb6b6740656aacdb64e6780492aa0de2dcf056cd3cd625c5604c
         echo "' alt='logo carolo game show' class='logo-cgs-nav'>
     </a>
         </li>
-
+<li class=\"nav-item\">
+  <a class=\"nav-link\" href=\"";
+        // line 16
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+        echo "\">Déconnexion</a>
+</li>
       <li class=\"nav-item dropdown\">
       <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"";
-        // line 18
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_aff_user");
         echo "\">Gestion des utilisateurs</a>
         </li>
@@ -71,23 +76,18 @@ class __TwigTemplate_f15c347eb6b6740656aacdb64e6780492aa0de2dcf056cd3cd625c5604c
         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
           
           <a class=\"dropdown-item\" href=\"";
-        // line 25
+        // line 27
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
         echo "\">Inscriptions solo</a>
           <a class=\"dropdown-item\" href=\"";
-        // line 26
+        // line 28
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categorie_index");
         echo "\">Ajouter une catégorie</a>
       </li>
     </ul>
   </div>
 
-<li class=\"nav-item ml-auto mr-5\">
-  <a class=\"nav-link\" href=\"";
-        // line 32
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-        echo "\">Déconnexion</a>
-</li>
+
 </nav>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -109,7 +109,7 @@ class __TwigTemplate_f15c347eb6b6740656aacdb64e6780492aa0de2dcf056cd3cd625c5604c
 
     public function getDebugInfo()
     {
-        return array (  88 => 32,  79 => 26,  75 => 25,  65 => 18,  56 => 12,  43 => 1,);
+        return array (  84 => 28,  80 => 27,  70 => 20,  63 => 16,  56 => 12,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -128,7 +128,9 @@ class __TwigTemplate_f15c347eb6b6740656aacdb64e6780492aa0de2dcf056cd3cd625c5604c
     <img src='{{ asset('img/logo-cgs.webp') }}' alt='logo carolo game show' class='logo-cgs-nav'>
     </a>
         </li>
-
+<li class=\"nav-item\">
+  <a class=\"nav-link\" href=\"{{path('app_logout')}}\">Déconnexion</a>
+</li>
       <li class=\"nav-item dropdown\">
       <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"{{path('admin_aff_user')}}\">Gestion des utilisateurs</a>
@@ -144,9 +146,7 @@ class __TwigTemplate_f15c347eb6b6740656aacdb64e6780492aa0de2dcf056cd3cd625c5604c
     </ul>
   </div>
 
-<li class=\"nav-item ml-auto mr-5\">
-  <a class=\"nav-link\" href=\"{{path('app_logout')}}\">Déconnexion</a>
-</li>
+
 </nav>", "layouts/partials/_navadmin.html.twig", "C:\\wamp64\\www\\test\\cosplayProject\\templates\\layouts\\partials\\_navadmin.html.twig");
     }
 }

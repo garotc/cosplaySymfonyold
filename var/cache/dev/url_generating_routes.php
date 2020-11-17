@@ -36,4 +36,6 @@ return [
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     '_app_user_account' => [[], ['_controller' => 'App\\Controller\\User\\UserController::getInfosUser'], [], [['text', '/profile/mon-compte']], [], []],
     'user_edit' => [[], ['_controller' => 'App\\Controller\\User\\UserController::editUser'], [], [['text', '/profile/modifier-compte']], [], []],
+    'inscription_solo_edit' => [[], ['_controller' => 'App\\Controller\\User\\UserController::inscriptionSolo'], [], [['text', '/profile/inscription/solo/edit']], [], []],
+    'inscription_solo' => [[], ['_controller' => 'App\\Controller\\User\\UserController::inscriptionSolo'], [], [['text', '/profile/inscription/solo']], [], []],
 ];

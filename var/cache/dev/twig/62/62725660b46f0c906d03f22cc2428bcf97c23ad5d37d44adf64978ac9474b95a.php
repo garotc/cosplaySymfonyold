@@ -82,7 +82,7 @@ class __TwigTemplate_04a17891291d0d1e79b23932d7383498c926b7ceca2d2f971889129737d
             echo "        <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"";
             // line 27
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("inscription_solo");
             echo "\">Inscription concours</a>
         </li>
         <li class=\"nav-item\">
@@ -156,7 +156,7 @@ class __TwigTemplate_04a17891291d0d1e79b23932d7383498c926b7ceca2d2f971889129737d
 
 {% else %}
         <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"{{path('accueil')}}\">Inscription concours</a>
+            <a class=\"nav-link\" href=\"{{path('inscription_solo')}}\">Inscription concours</a>
         </li>
         <li class=\"nav-item\">
             <a class=\"nav-link ml-auto\" href=\"{{path('_app_user_account')}}\">Mon compte</a>
