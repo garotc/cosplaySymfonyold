@@ -3,8 +3,10 @@
 namespace App\Controller\User;
 
 use App\Entity\User;
+use App\Entity\InscriptionSolo;
 use App\Repository\UserRepository;
 use App\Form\EditAccountUserFormType;
+use App\Form\InscriptionSoloFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -46,5 +48,38 @@ class UserController extends AbstractController
         }
 
         return $this->render('home/user/editCompte.html.twig', ['userForm'=> $form->createView()]);
+    }
+
+    /**
+     * @Route("/profile/inscription/solo/edit", name="inscription_solo_edit", methods="GET|POST")
+     * @Route("/profile/inscription/solo", name="inscription_solo")
+     */
+    public function inscriptionSolo(InscriptionSolo $inscription=null, Request $request, EntityManagerInterface $em): Response
+    {
+        $admin = $this->getUser();
+
+        if(!$inscription){
+            $inscription = new inscriptionSolo();
+            $inscription->setUser($admin);
+        }
+
+        //variable pour savoir si on est en création ou modification
+
+       $modif = $inscription->getId() !== null;
+
+       $form = $this->createForm(InscriptionSoloFormType::class, $inscription);
+       $form->handleRequest($request);
+
+       if($form->isSubmitted() && $form->isValid()){
+           $em->persist($inscription);
+           $em->flush();
+
+           $this->addFlash('message', $modif ? 'Inscription modifié avec succès' : 'Inscription effectué avec succès');
+
+           return $this->redirectToRoute('inscription_solo');
+       }
+
+       return $this->render('user/inscriptionsolo.html.twig',['formulaireSolo'=>$form->createView()]);
+
     }
 }

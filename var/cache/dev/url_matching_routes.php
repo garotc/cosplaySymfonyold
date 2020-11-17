@@ -28,6 +28,8 @@ return [
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/profile/mon-compte' => [[['_route' => '_app_user_account', '_controller' => 'App\\Controller\\User\\UserController::getInfosUser'], null, null, null, false, false, null]],
         '/profile/modifier-compte' => [[['_route' => 'user_edit', '_controller' => 'App\\Controller\\User\\UserController::editUser'], null, null, null, false, false, null]],
+        '/profile/inscription/solo/edit' => [[['_route' => 'inscription_solo_edit', '_controller' => 'App\\Controller\\User\\UserController::inscriptionSolo'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/profile/inscription/solo' => [[['_route' => 'inscription_solo', '_controller' => 'App\\Controller\\User\\UserController::inscriptionSolo'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
