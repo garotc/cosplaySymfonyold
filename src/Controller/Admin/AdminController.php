@@ -9,6 +9,7 @@ use App\Repository\UserRepository;
 use App\Form\EditAccountUserFormType;
 use App\Repository\CategorieRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\InscriptionSoloRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -94,6 +95,16 @@ class AdminController extends AbstractController
 
             return $this->redirectToRoute('admin_aff_user');
         }
+    }
+
+    /**
+     * @Route("/admin/inscription/solo", name="admin_aff_inscription_solo")
+     */
+    public function affInscriptionSolo(InscriptionSoloRepository $repo): Response
+    {
+        $inscription = $this->getUser();
+        $inscriptionsSolo = $repo->findAll();
+        return $this->render('admin/inscriptionSolo.html.twig', compact('inscriptionsSolo','inscription'));
     }
 
 }

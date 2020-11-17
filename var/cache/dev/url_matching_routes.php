@@ -16,6 +16,7 @@ return [
         '/admin/admin' => [[['_route' => 'admin_admin', '_controller' => 'App\\Controller\\Admin\\AdminController::index'], null, null, null, false, false, null]],
         '/admin/categorie/ajout' => [[['_route' => 'categorie_ajout', '_controller' => 'App\\Controller\\Admin\\AdminController::ajouterCategorie'], null, null, null, false, false, null]],
         '/admin/users' => [[['_route' => 'admin_aff_user', '_controller' => 'App\\Controller\\Admin\\AdminController::affUser'], null, null, null, false, false, null]],
+        '/admin/inscription/solo' => [[['_route' => 'admin_aff_inscription_solo', '_controller' => 'App\\Controller\\Admin\\AdminController::affInscriptionSolo'], null, null, null, false, false, null]],
         '/admin/categorie/admin/categorie' => [[['_route' => 'categorie_index', '_controller' => 'App\\Controller\\CategorieController::index'], null, ['GET' => 0], null, false, false, null]],
         '/admin/categorieadmin/ajouter-categorie' => [[['_route' => 'categorie_new', '_controller' => 'App\\Controller\\CategorieController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],

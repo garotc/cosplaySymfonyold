@@ -33,8 +33,18 @@ class InscriptionSoloFormType extends AbstractType
                     'Après mon entrée'=>false
                 ]
             ])
-            ->add('aideSolo')
-            ->add('accessoireSolo')
+            ->add('aideSolo', ChoiceType::class,[
+                'choices'=>[
+                    'Besoin d\'aide pour monter'=> true,
+                    'Pas besoin d\'aide pour monter'=>false
+                ]
+            ])
+            ->add('accessoireSolo', ChoiceType::class,[
+                'choices'=>[
+                    'J\ai des accessoires à déposer'=> true,
+                    'Je n\'ai pas d\'accessoires à déposer'=>false
+                ]
+            ])
             ->add('descriptionAccessoireSolo', TextareaType::class)
             ->add('infosSolo', TextareaType::class)
             //->add('user')
