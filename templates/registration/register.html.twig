@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <h1>Créer un compte</h1>
+
+
+    {{ form_start(registrationForm) }}
+    <div class="form">   
+    <h2 class="col-6 m-auto">Formulaire d'inscription</h2>
+
+        <div class="form-group col-6 m-auto">
+            {{ form_row(registrationForm.pseudo,{"attr":{ placeholder:'Pseudo', class:'form-control'}})
+            }}
+        </div>
+
+        <div class="form-group col-6 m-auto">
+            {{ form_row(registrationForm.nom,{"attr":{ placeholder:'Nom', class:'form-control'}})
+            }}
+        </div>
+
+        <div class="form-group col-6 m-auto">
+            {{ form_row(registrationForm.prenom,{"attr":{ placeholder:'Prénom', class:'form-control'}})
+            }}
+        </div>
+
+        <div class="form-group col-6 m-auto">
+            {{ form_row(registrationForm.telephone,{"attr":{ placeholder:'numéro de téléphone', class:'form-control'}})
+            }}
+        </div>        
+
+        <div class="form-group col-6 m-auto">
+            {{ form_row(registrationForm.email,{"attr":{class:'form-control'}})
+            }}
+        </div>
+
+        <div class="form-group col-6 m-auto">
+            {{ form_row(registrationForm.plainPassword,{"attr":{class:'form-control'}})
+            }}
+        </div>
+        <div class="col-2 mx-auto mt-5">
+        {{ form_row(registrationForm.Enregistrer,{"attr":{class:'btn btn-primary'}})
+        }}
+        </div>
+        <div class="form-group col-6 m-auto">
+            {{ form_row(registrationForm.agreeTerms,{"attr":{class:''}})
+            }}
+        </div>
+</div>
+    {{ form_end(registrationForm) }}
+
+{% endblock %}
