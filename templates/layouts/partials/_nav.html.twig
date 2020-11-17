@@ -18,18 +18,18 @@
             <a class="nav-link" href="{{path("register")}}">Inscription</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item mr-5">
             <a class="nav-link" href="{{path("app_login")}}"><i class="far fa-user mr-1"></i>Connexion</a>
         </li>
 
 {% else %}
         <li class="nav-item">
-            <a class="nav-link" href="{{path('accueil')}}">Inscription</a>
+            <a class="nav-link" href="{{path('accueil')}}">Inscription concours</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{path('_app_user_account')}}">Mon compte</a>
+            <a class="nav-link ml-auto" href="{{path('_app_user_account')}}">Mon compte</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item ml-auto mr-5">
             <a class="nav-link" href="{{path('app_logout')}}">Déconnexion</a>
         </li>
 {% endif %}

@@ -69,7 +69,7 @@ class __TwigTemplate_04a17891291d0d1e79b23932d7383498c926b7ceca2d2f971889129737d
             echo "\">Inscription</a>
         </li>
 
-        <li class=\"nav-item\">
+        <li class=\"nav-item mr-5\">
             <a class=\"nav-link\" href=\"";
             // line 22
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
@@ -83,15 +83,15 @@ class __TwigTemplate_04a17891291d0d1e79b23932d7383498c926b7ceca2d2f971889129737d
             <a class=\"nav-link\" href=\"";
             // line 27
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("accueil");
-            echo "\">Inscription</a>
+            echo "\">Inscription concours</a>
         </li>
         <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"";
+            <a class=\"nav-link ml-auto\" href=\"";
             // line 30
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("_app_user_account");
             echo "\">Mon compte</a>
         </li>
-        <li class=\"nav-item\">
+        <li class=\"nav-item ml-auto mr-5\">
             <a class=\"nav-link\" href=\"";
             // line 33
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
@@ -150,18 +150,18 @@ class __TwigTemplate_04a17891291d0d1e79b23932d7383498c926b7ceca2d2f971889129737d
             <a class=\"nav-link\" href=\"{{path(\"register\")}}\">Inscription</a>
         </li>
 
-        <li class=\"nav-item\">
+        <li class=\"nav-item mr-5\">
             <a class=\"nav-link\" href=\"{{path(\"app_login\")}}\"><i class=\"far fa-user mr-1\"></i>Connexion</a>
         </li>
 
 {% else %}
         <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"{{path('accueil')}}\">Inscription</a>
+            <a class=\"nav-link\" href=\"{{path('accueil')}}\">Inscription concours</a>
         </li>
         <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"{{path('_app_user_account')}}\">Mon compte</a>
+            <a class=\"nav-link ml-auto\" href=\"{{path('_app_user_account')}}\">Mon compte</a>
         </li>
-        <li class=\"nav-item\">
+        <li class=\"nav-item ml-auto mr-5\">
             <a class=\"nav-link\" href=\"{{path('app_logout')}}\">Déconnexion</a>
         </li>
 {% endif %}

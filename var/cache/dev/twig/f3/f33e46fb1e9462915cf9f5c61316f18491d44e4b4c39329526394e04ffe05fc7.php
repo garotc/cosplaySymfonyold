@@ -79,16 +79,15 @@ class __TwigTemplate_f15c347eb6b6740656aacdb64e6780492aa0de2dcf056cd3cd625c5604c
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("categorie_index");
         echo "\">Ajouter une catégorie</a>
       </li>
-        <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"";
-        // line 29
+    </ul>
+  </div>
+
+<li class=\"nav-item ml-auto mr-5\">
+  <a class=\"nav-link\" href=\"";
+        // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         echo "\">Déconnexion</a>
-        </li>
-    </ul>
-
-
-  </div>
+</li>
 </nav>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -110,7 +109,7 @@ class __TwigTemplate_f15c347eb6b6740656aacdb64e6780492aa0de2dcf056cd3cd625c5604c
 
     public function getDebugInfo()
     {
-        return array (  85 => 29,  79 => 26,  75 => 25,  65 => 18,  56 => 12,  43 => 1,);
+        return array (  88 => 32,  79 => 26,  75 => 25,  65 => 18,  56 => 12,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -142,13 +141,12 @@ class __TwigTemplate_f15c347eb6b6740656aacdb64e6780492aa0de2dcf056cd3cd625c5604c
           <a class=\"dropdown-item\" href=\"{{path('accueil')}}\">Inscriptions solo</a>
           <a class=\"dropdown-item\" href=\"{{path('categorie_index')}}\">Ajouter une catégorie</a>
       </li>
-        <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"{{path('app_logout')}}\">Déconnexion</a>
-        </li>
     </ul>
-
-
   </div>
+
+<li class=\"nav-item ml-auto mr-5\">
+  <a class=\"nav-link\" href=\"{{path('app_logout')}}\">Déconnexion</a>
+</li>
 </nav>", "layouts/partials/_navadmin.html.twig", "C:\\wamp64\\www\\test\\cosplayProject\\templates\\layouts\\partials\\_navadmin.html.twig");
     }
 }
