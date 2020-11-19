@@ -138,9 +138,81 @@ class __TwigTemplate_22610257ff63a06e372896118796f94708aed9e97e7bee24b22d2a18073
             echo "</div>
         </div>
         <div class=\"row py-1\">
-            <div class=\"col-sm-12 col-md-12\">Email : ";
+            <div class=\"col-sm-12 col-md-12\">Univers du personnage : ";
             // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["inscription"], "user", [], "any", false, false, false, 33), "email", [], "any", false, false, false, 33), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["inscription"], "UniverSolo", [], "any", false, false, false, 33), "html", null, true);
+            echo "</div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Type de média : ";
+            // line 36
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["inscription"], "MediaSolo", [], "any", false, false, false, 36), 1))) {
+                // line 37
+                echo "            Musique
+            ";
+            } else {
+                // line 39
+                echo "            Vidéo
+            ";
+            }
+            // line 41
+            echo "            </div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Lancement du média : ";
+            // line 44
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["inscription"], "envoiMediaSolo", [], "any", false, false, false, 44), 1))) {
+                // line 45
+                echo "            Avant l'entrée sur scène
+            ";
+            } else {
+                // line 47
+                echo "            Après l'entrée sur scène
+            ";
+            }
+            // line 49
+            echo "            </div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Aide pour monter sur scène : ";
+            // line 52
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["inscription"], "AideSolo", [], "any", false, false, false, 52), 1))) {
+                // line 53
+                echo "            Oui
+            ";
+            } else {
+                // line 55
+                echo "            Non
+            ";
+            }
+            // line 57
+            echo "            </div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Accessoires à déposer sur scène : ";
+            // line 60
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, $context["inscription"], "AccessoireSolo", [], "any", false, false, false, 60), 1))) {
+                // line 61
+                echo "            Oui
+            ";
+            } else {
+                // line 63
+                echo "            Non
+            ";
+            }
+            // line 65
+            echo "            </div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Déscription des accessoires : ";
+            // line 68
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["inscription"], "DescriptionAccessoireSolo", [], "any", false, false, false, 68), "html", null, true);
+            echo "</div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Autres informations : ";
+            // line 71
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["inscription"], "InfosSolo", [], "any", false, false, false, 71), "html", null, true);
             echo "</div>
         </div>
     </div>
@@ -150,7 +222,7 @@ class __TwigTemplate_22610257ff63a06e372896118796f94708aed9e97e7bee24b22d2a18073
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['inscription'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 38
+        // line 76
         echo "</section>
 
 ";
@@ -174,7 +246,7 @@ class __TwigTemplate_22610257ff63a06e372896118796f94708aed9e97e7bee24b22d2a18073
 
     public function getDebugInfo()
     {
-        return array (  154 => 38,  143 => 33,  137 => 30,  130 => 26,  124 => 23,  118 => 20,  114 => 19,  108 => 16,  102 => 13,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  226 => 76,  215 => 71,  209 => 68,  204 => 65,  200 => 63,  196 => 61,  194 => 60,  189 => 57,  185 => 55,  181 => 53,  179 => 52,  174 => 49,  170 => 47,  166 => 45,  164 => 44,  159 => 41,  155 => 39,  151 => 37,  149 => 36,  143 => 33,  137 => 30,  130 => 26,  124 => 23,  118 => 20,  114 => 19,  108 => 16,  102 => 13,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -211,7 +283,45 @@ class __TwigTemplate_22610257ff63a06e372896118796f94708aed9e97e7bee24b22d2a18073
             <div class=\"col-sm-12 col-md-12\">Nom du personnage : {{ inscription.NomPersoSolo }}</div>
         </div>
         <div class=\"row py-1\">
-            <div class=\"col-sm-12 col-md-12\">Email : {{ inscription.user.email }}</div>
+            <div class=\"col-sm-12 col-md-12\">Univers du personnage : {{ inscription.UniverSolo }}</div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Type de média : {% if inscription.MediaSolo == 1 %}
+            Musique
+            {% else %}
+            Vidéo
+            {% endif %}
+            </div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Lancement du média : {% if inscription.envoiMediaSolo == 1 %}
+            Avant l'entrée sur scène
+            {% else %}
+            Après l'entrée sur scène
+            {% endif %}
+            </div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Aide pour monter sur scène : {% if inscription.AideSolo == 1 %}
+            Oui
+            {% else %}
+            Non
+            {% endif %}
+            </div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Accessoires à déposer sur scène : {% if inscription.AccessoireSolo == 1 %}
+            Oui
+            {% else %}
+            Non
+            {% endif %}
+            </div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Déscription des accessoires : {{ inscription.DescriptionAccessoireSolo }}</div>
+        </div>
+        <div class=\"row py-1\">
+            <div class=\"col-sm-12 col-md-12\">Autres informations : {{ inscription.InfosSolo }}</div>
         </div>
     </div>
 
